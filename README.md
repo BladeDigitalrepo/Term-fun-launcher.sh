@@ -1,4 +1,4 @@
-# Term-fun-launcher.git
+# Term-fun-launcher.sh.git
 pkg update -y && pkg install -y cmatrix sl libcaca neofetch figlet toilet htop
 
 #!/data/data/com.termux/files/usr/bin/bash
