@@ -1,8 +1,48 @@
-# Term-fun-launcher.sh.git
-pkg update -y && pkg install -y cmatrix sl libcaca neofetch figlet toilet htop
+```markdown
+# Term-fun-launcher.sh
 
+## Overview
+
+A fun terminal launcher for Termux that provides quick access to visual and system tools!
+
+## Installation
+
+1. **Download the script:**
+   ```sh
+   curl -O https://raw.githubusercontent.com/BladeDigitalrepo/Term-fun-launcher.sh/main/term-fun-launcher.sh
+   ```
+
+2. **Make it executable:**
+   ```sh
+   chmod +x term-fun-launcher.sh
+   ```
+
+3. **Run the installer to set up all dependencies and the launcher:**
+   ```sh
+   ./term-fun-launcher.sh --install
+   ```
+
+4. **Start the launcher:**
+   ```sh
+   ./term-fun-launcher.sh
+   ```
+
+## Script
+
+```bash
 #!/data/data/com.termux/files/usr/bin/bash
 # Terminal Fun Launcher 🎉
+
+install() {
+    echo "Updating package list and installing dependencies..."
+    pkg update -y && pkg install -y cmatrix sl libcaca neofetch figlet toilet htop
+    echo "All dependencies installed!"
+    exit 0
+}
+
+if [[ "$1" == "--install" ]]; then
+    install
+fi
 
 while true; do
     clear
@@ -52,3 +92,17 @@ while true; do
             ;;
     esac
 done
+```
+
+## Optional: Add to PATH
+
+For easier access, move the script to a directory in your `PATH`:
+```sh
+mv term-fun-launcher.sh $PREFIX/bin/term-fun-launcher
+chmod +x $PREFIX/bin/term-fun-launcher
+```
+Now launch it anytime with:
+```sh
+term-fun-launcher
+```
+```
